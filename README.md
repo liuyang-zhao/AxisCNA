@@ -27,14 +27,11 @@ Or:
 conda install -y liuyangzhao::spacna -c conda-forge -c bioconda
 ```
 
-> **Bioconda:** Submitting `spacna` to the public bioconda channel is **in progress** (PR).  
-> After it is merged, you can also use:
+> **Bioconda:** `spacna` is also on bioconda (`0.1.0+`). Prefer bioconda when you want the public channel; use `-c liuyangzhao` for the latest personal-channel build (e.g. `0.1.1`).
 >
 > ```bash
 > conda install -c bioconda -c conda-forge spacna
 > ```
->
-> Until then, please install with `-c liuyangzhao` as above.
 
 ---
 
@@ -42,12 +39,13 @@ conda install -y liuyangzhao::spacna -c conda-forge -c bioconda
 
 A pre-built Conda package is shipped under [`dist/`](dist/):
 
+- `dist/spacna-0.1.1-0.tar.bz2` (current)
 - `dist/spacna-0.1.0-0.tar.bz2`
 
 ```bash
 conda create -y -n spacna
 conda activate spacna
-conda install -y -c conda-forge -c bioconda ./dist/spacna-0.1.0-0.tar.bz2
+conda install -y -c conda-forge -c bioconda ./dist/spacna-0.1.1-0.tar.bz2
 spacna help
 ```
 
@@ -236,6 +234,18 @@ spacna gen-reference --species human --bin-size 500kb --mode all \
 ```
 
 **Output:** `reference/genomic_bins/`, `gc_content/`, `mappability/` tables named by species and bin size.
+
+---
+
+## Changelog
+
+### 0.1.1
+- Fix `generate_sparse_counts.py` barcode indexing (header no longer shifts spot indices)
+- Fix `spatial_dna_analysis.R` syntax error (extra `)` in `RUN_EXAMPLES` block)
+- Spatial cluster maps: Y-axis 0 at top, resolution at bottom (`scale_y_reverse`)
+
+### 0.1.0
+- Initial conda package release
 
 ---
 
