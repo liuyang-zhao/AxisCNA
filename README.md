@@ -1,4 +1,4 @@
-# SpaCNA
+# AxisCNA
 
 **Spatial DNA CNV toolkit** (Conda package distribution).
 
